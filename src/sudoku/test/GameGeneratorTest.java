@@ -23,7 +23,7 @@ public class GameGeneratorTest {
         assert (!GameLogic.rowsAreInvalid(newPuzzle));
         assert (!GameLogic.columnsAreInvalid(newPuzzle));
         assert (!GameLogic.squaresAreInvalid(newPuzzle));
-        //assert (numberOfFilledSquares == 81);
+        assert (numberOfFilledSquares == 81);
     }
     @Test
     public void test100NewPuzzles(){
