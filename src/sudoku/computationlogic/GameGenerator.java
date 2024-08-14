@@ -3,6 +3,7 @@ package sudoku.computationlogic;
 import static sudoku.problemdomain.SudokuGame.GRID_BOUNDARY;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import sudoku.problemdomain.Coordinates;
 
@@ -30,7 +31,7 @@ public class GameGenerator {
             // allocations stored in the List below, and reset them all to 0 - empty.
             int interrupt = 0;
             //keep track of what has been allocated in the current frame of the loop
-            ArrayList<Coordinates> allocTracker = new ArrayList<>();
+            List<Coordinates> allocTracker = new ArrayList<>();
 
             //failsafe - if keep rolling back allocations on most recent frame, the game still
             // keeps breaking, after 500 times we reset the board entirely and start again
@@ -93,7 +94,7 @@ public class GameGenerator {
         //not actually solvable until the algorithm below finishes...
         int[][] solvableArray = new int[GRID_BOUNDARY][GRID_BOUNDARY];
 
-        while(solvable == false){
+        while(!solvable){
             //take values from solvedGame and write to new unsolved; i.e. reset to init state
             SudokuUtilities.copySudokuArrayValues(solvedGame, solvableArray);
             // remove 40 random numbers

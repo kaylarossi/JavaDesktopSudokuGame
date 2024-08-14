@@ -2,6 +2,7 @@ package sudoku.computationlogic;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import sudoku.constants.GameState;
 import sudoku.constants.Rows;
 import sudoku.problemdomain.SudokuGame;
@@ -119,7 +120,7 @@ public class GameLogic {
         int yIndexEnd = yIndex + 3;
         int xIndexEnd = xIndex + 3;
 
-        ArrayList<Integer> square = new ArrayList<Integer>();
+        List<Integer> square = new ArrayList<Integer>();
         while (yIndex < yIndexEnd){
             while (xIndex < xIndexEnd){
                 square.add(grid[xIndex][yIndex]);
@@ -136,7 +137,7 @@ public class GameLogic {
 
     public static boolean rowsAreInvalid(int[][] grid) {
         for (int yIndex=0; yIndex<GRID_BOUNDARY;yIndex++){
-            ArrayList<Integer> row = new ArrayList<Integer>();
+            List<Integer> row = new ArrayList<Integer>();
             for(int xIndex=0; xIndex < GRID_BOUNDARY; xIndex++){
                 row.add(grid[xIndex][yIndex]);
             }
@@ -147,7 +148,7 @@ public class GameLogic {
 
     public static boolean columnsAreInvalid(int[][] grid) {
         for (int xIndex=0; xIndex<GRID_BOUNDARY;xIndex++){
-            ArrayList<Integer> row = new ArrayList<Integer>();
+            List<Integer> row = new ArrayList<Integer>();
             for(int yIndex=0; yIndex < GRID_BOUNDARY; yIndex++){
                 row.add(grid[xIndex][yIndex]);
             }
@@ -158,7 +159,7 @@ public class GameLogic {
 
 
 
-    public static boolean collectionHasRepeats(ArrayList<Integer> collection) {
+    public static boolean collectionHasRepeats(List<Integer> collection) {
         //count occurances of ints from 1-GRID_BOUNDARY
         // if Collections.frequency returns a value greater than 1, then a non-zero number has been
         // repeated in a square
